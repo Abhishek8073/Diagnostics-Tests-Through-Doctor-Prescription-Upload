@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(45, 180, 160, 0.10), transparent 30rem),
+    #f7faf9;
+}
+
+button, a, input, select, textarea {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease,
+    box-shadow .2s ease, transform .2s ease;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(22, 138, 122, .28);
+  outline-offset: 3px;
+}
+
+input, select, textarea { border-color: #dbe4e6 !important; }
+input:focus, select:focus, textarea:focus {
+  border-color: #168a7a !important;
+  box-shadow: 0 0 0 4px rgba(22, 138, 122, .10);
+  outline: none;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main { animation: page-enter .45s cubic-bezier(.22, 1, .36, 1) both; }
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes tube-settle {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tube-settle {
+  animation: tube-settle 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-reveal-up {
+  animation: reveal-up 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tube-settle,
+  .animate-reveal-up {
+    animation: none !important;
+  }
+  main { animation: none !important; }
+}
