@@ -201,7 +201,7 @@ export default function PlaceOrderPage() {
         >
           {preview ? (
             <div className="mx-auto max-w-lg">
-              <img src={preview} alt="Prescription preview" className="mx-auto rounded-2xl border border-slate-200" />
+              <img src={preview} alt="Prescription preview" className="mx-auto h-auto w-full max-w-full rounded-2xl border border-slate-200" />
               <p className="mt-4 text-sm text-slate-500">Ready to upload: {file?.name}</p>
             </div>
           ) : file ? (
