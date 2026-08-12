@@ -12,7 +12,6 @@ import com.diagnostic.app.Service.LabService;
 import com.diagnostic.app.Service.OrderService;
 import com.diagnostic.app.Service.UsersService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,13 +19,21 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/admin")
-@RequiredArgsConstructor
 public class AdminController {
 
     private final UsersService usersService;
     private final LabService labService;
     private final OrderService orderService;
     private final AuthService authService;
+
+    public AdminController(UsersService usersService, LabService labService,
+                           OrderService orderService, AuthService authService) {
+        this.usersService = usersService;
+        this.labService = labService;
+        this.orderService = orderService;
+        this.authService = authService;
+    }
+
 
     private static final Set<OrderStatus> LAB_HANDLED_STATUSES =
             Set.of(OrderStatus.PENDING, OrderStatus.ACCEPTED, OrderStatus.REJECTED, OrderStatus.COMPLETED);

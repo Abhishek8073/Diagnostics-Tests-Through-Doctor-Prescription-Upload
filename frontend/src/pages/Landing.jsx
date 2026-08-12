@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaBars, FaCheckCircle, FaHome, FaMapMarkerAlt, FaTimes } from 'react-icons/fa'
+import diagnosticImage from '../image/ACCUHEALTH-800-X-502-diagnostic1.jpg'
 
 const ink = '#101A24'
 const porcelain = '#F5F7F8'
@@ -232,9 +233,9 @@ export default function LandingPage() {
 
           <div className="relative isolate min-h-[340px] overflow-hidden rounded-[2rem] bg-slate-900 shadow-lift sm:aspect-[3/2] sm:min-h-0">
             <img
-              src="src\image\ACCUHEALTH-800-X-502-diagnostic1.jpg"
-              alt="Colorful laboratory glassware for diagnostic testing"
-              className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 hover:scale-105"
+               src={diagnosticImage}
+               alt="Diagnostic"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 hover:scale-105"
             />
             {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/15 to-transparent" />
             <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md"><FaCheckCircle className="text-emerald-300" /> No need to be testy</div>
